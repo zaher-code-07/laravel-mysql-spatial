@@ -9,14 +9,13 @@ class Blueprint extends IlluminateBlueprint
     /**
      * Add a geometry column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param string $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function geometry($column, $srid = null)
+    public function geometry($column)
     {
-        return $this->addColumn('geometry', $column, compact('srid'));
+        return $this->addColumn('geometry', $column);
     }
 
     /**
@@ -35,79 +34,73 @@ class Blueprint extends IlluminateBlueprint
     /**
      * Add a linestring column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function lineString($column, $srid = null)
+    public function lineString($column)
     {
-        return $this->addColumn('linestring', $column, compact('srid'));
+        return $this->addColumn('linestring', $column);
     }
 
     /**
      * Add a polygon column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function polygon($column, $srid = null)
+    public function polygon($column)
     {
-        return $this->addColumn('polygon', $column, compact('srid'));
+        return $this->addColumn('polygon', $column);
     }
 
     /**
      * Add a multipoint column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function multiPoint($column, $srid = null)
+    public function multiPoint($column)
     {
-        return $this->addColumn('multipoint', $column, compact('srid'));
+        return $this->addColumn('multipoint', $column);
     }
 
     /**
      * Add a multilinestring column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function multiLineString($column, $srid = null)
+    public function multiLineString($column)
     {
-        return $this->addColumn('multilinestring', $column, compact('srid'));
+        return $this->addColumn('multilinestring', $column);
     }
 
     /**
      * Add a multipolygon column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function multiPolygon($column, $srid = null)
+    public function multiPolygon($column)
     {
-        return $this->addColumn('multipolygon', $column, compact('srid'));
+        return $this->addColumn('multipolygon', $column);
     }
 
     /**
      * Add a geometrycollection column on the table.
      *
-     * @param string   $column
-     * @param null|int $srid
+     * @param $column
      *
      * @return \Illuminate\Support\Fluent
      */
-    public function geometryCollection($column, $srid = null)
+    public function geometryCollection($column)
     {
-        return $this->addColumn('geometrycollection', $column, compact('srid'));
+        return $this->addColumn('geometrycollection', $column);
     }
 
     /**

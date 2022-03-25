@@ -20,12 +20,12 @@ class PolygonTest extends BaseTestCase
             ]
         );
 
-        $this->polygon = new Polygon([$collection], 4326);
+        $this->polygon = new Polygon([$collection]);
     }
 
     public function testFromWKT()
     {
-        $polygon = Polygon::fromWKT('POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))', 4326);
+        $polygon = Polygon::fromWKT('POLYGON((0 0,4 0,4 4,0 4,0 0),(1 1, 2 1, 2 2, 1 2,1 1))');
         $this->assertInstanceOf(Polygon::class, $polygon);
 
         $this->assertEquals(2, $polygon->count());

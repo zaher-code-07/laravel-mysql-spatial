@@ -81,53 +81,6 @@ class BuilderTest extends BaseTestCase
 
         $this->assertSame(1, $result);
     }
-
-    public function testUpdatePointWithSrid()
-    {
-        $point = new Point(1, 2, 4326);
-        $this->queryBuilder
-            ->shouldReceive('update')
-            ->with(['point' => new SpatialExpression($point)])
-            ->once()
-            ->andReturn(1);
-
-        $result = $this->builder->update(['point' => $point]);
-
-        $this->assertSame(1, $result);
-    }
-
-    public function testUpdateLinestringWithSrid()
-    {
-        $linestring = new LineString([new Point(0, 0), new Point(1, 1), new Point(2, 2)], 4326);
-
-        $this->queryBuilder
-            ->shouldReceive('update')
-            ->with(['linestring' => new SpatialExpression($linestring)])
-            ->once()
-            ->andReturn(1);
-
-        $result = $this->builder->update(['linestring' => $linestring]);
-
-        $this->assertSame(1, $result);
-    }
-
-    public function testUpdatePolygonWithSrid()
-    {
-        $linestrings[] = new LineString([new Point(0, 0), new Point(0, 1)]);
-        $linestrings[] = new LineString([new Point(0, 1), new Point(1, 1)]);
-        $linestrings[] = new LineString([new Point(1, 1), new Point(0, 0)]);
-        $polygon = new Polygon($linestrings, 4326);
-
-        $this->queryBuilder
-            ->shouldReceive('update')
-            ->with(['polygon' => new SpatialExpression($polygon)])
-            ->once()
-            ->andReturn(1);
-
-        $result = $this->builder->update(['polygon' => $polygon]);
-
-        $this->assertSame(1, $result);
-    }
 }
 
 class TestBuilderModel extends Model
